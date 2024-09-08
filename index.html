@@ -9,28 +9,53 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
+      background: #121212;
       color: #e0e0e0;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
       overflow: hidden;
+      position: relative;
     }
+
+    /* Animated Background */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+      background-size: 600% 600%;
+      animation: gradientAnimation 15s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
     .container {
       text-align: center;
+      z-index: 1;
     }
+
     h1 {
       font-size: 4rem;
       color: #00aaff;
       margin-bottom: 0.5em;
     }
+
     .links {
       margin-top: 1em;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .links a {
       text-decoration: none;
       color: #00aaff;
@@ -41,10 +66,12 @@
       border-radius: 4px;
       transition: background-color 0.3s, transform 0.3s;
     }
+
     .links a:hover {
       background-color: rgba(0, 170, 255, 0.2);
       transform: scale(1.05);
     }
+
     .links a::after {
       content: '';
       position: absolute;
@@ -56,16 +83,20 @@
       transition: width 0.3s;
       transform: translateX(-50%);
     }
+
     .links a:hover::after {
       width: 100%;
     }
+
     @media (max-width: 600px) {
       body {
         font-size: 14px;
       }
+
       h1 {
         font-size: 2.5rem;
       }
+
       .links a {
         font-size: 1.2rem;
       }
@@ -73,11 +104,12 @@
   </style>
 </head>
 <body>
+  <div class="background"></div>
   <div class="container">
     <h1>Kyler Moulton</h1>
     <div class="links">
       <a href="https://github.com/KylerMoulton/Chess">240 - Software Construction - Chess</a>
-      <a href="https://github.com/KylerMoulton/SpellingCorrector">240 - Software Construction- Spell Corrector</a>
+      <a href="https://github.com/KylerMoulton/SpellingCorrector">240 - Software Construction - Spell Corrector</a>
       <a href="https://github.com/KylerMoulton/startup">260 - Web Programming - Startup</a>
       <a href="https://github.com/KylerMoulton/jwt-pizza">329 - DevOps - jwt-pizza</a>
     </div>
