@@ -15,7 +15,7 @@
       justify-content: center;
       height: 100vh;
       overflow: hidden;
-      background: #121212;
+      background-color: #000000; /* Base color */
       position: relative;
     }
 
@@ -110,14 +110,14 @@
     particlesJS('particles', {
       "particles": {
         "number": {
-          "value": 80,
+          "value": 100, // Increase or decrease the number of particles
           "density": {
             "enable": true,
             "value_area": 800
           }
         },
         "color": {
-          "value": "#00aaff"
+          "value": "#ffffff" // White particles for contrast
         },
         "shape": {
           "type": "circle",
@@ -149,13 +149,13 @@
         "line_linked": {
           "enable": true,
           "distance": 150,
-          "color": "#00aaff",
+          "color": "#0077ff", // White lines for contrast
           "opacity": 0.4,
           "width": 1
         },
         "move": {
           "enable": true,
-          "speed": 6,
+          "speed": 3, // Adjust speed of particle movement
           "direction": "none",
           "random": false,
           "straight": false,
@@ -172,11 +172,11 @@
         "detect_on": "canvas",
         "events": {
           "onhover": {
-            "enable": true,
+            "enable": false, // Disable interactivity
             "mode": "repulse"
           },
           "onclick": {
-            "enable": true,
+            "enable": false, // Disable interactivity
             "mode": "push"
           },
           "resize": true
